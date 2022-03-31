@@ -4,5 +4,8 @@
     <string name="search">search</string>
     <string name="profile">profile</string>
     <string name="setting">setting</string>
+    <string name="my_profile">My Profile</string>
+    <string name="order">order</string>
+
 
 </resources>

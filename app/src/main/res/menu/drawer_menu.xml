@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu
 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/myProfile"
+        android:icon="@drawable/ic_user"
+        android:title="@string/my_profile" />
+    <item
+        android:id="@+id/order"
+        android:icon="@drawable/ic_shopping_basket"
+        android:title="@string/order" />
+
+    <item
+        android:id="@+id/setting_drawer"
+        android:icon="@drawable/ic_settings_24"
+        android:title="@string/setting" />
 </menu>
