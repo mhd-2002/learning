@@ -4,6 +4,9 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.ContactsContract
+import android.view.ContextMenu
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -13,8 +16,7 @@ const val RequestCode1 = 1
 
 class MainActivity2 : AppCompatActivity() {
     lateinit var binding: ActivityMain2Binding
-
-
+    
     private lateinit var name: String
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -30,7 +32,8 @@ class MainActivity2 : AppCompatActivity() {
 
     }
 
-    fun listener() {
+    private fun listener() {
+
 
         binding.btContact.setOnClickListener {
             val contact = Intent(Intent.ACTION_PICK)
@@ -53,6 +56,8 @@ class MainActivity2 : AppCompatActivity() {
             startActivity(call)
         }
 
+        binding.btProgressBar.setOnCreateContextMenuListener(this)
+
         binding.btProgressBar.setOnClickListener {
             binding.progressbar.visibility = View.VISIBLE
             binding.progressHorizontal.visibility = View.VISIBLE
@@ -65,10 +70,77 @@ class MainActivity2 : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode==RequestCode1){
-                if (resultCode== RESULT_OK){
-                    Toast.makeText(this, "با موفقیت انجام شد.($data",Toast.LENGTH_SHORT).show()
-                }
+        if (requestCode == RequestCode1) {
+            if (resultCode == RESULT_OK) {
+                Toast.makeText(this, "با موفقیت انجام شد.($data", Toast.LENGTH_SHORT).show()
+            }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.option_menu, menu)
+
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            R.id.action_search -> {
+                showMessage("action search clicked")
+            }
+            R.id.action_profile -> {
+                showMessage("action profile clicked")
+            }
+            R.id.setting -> {
+                showMessage("action setting clicked")
+            }
+
+        }
+        return true
+    }
+
+    private fun showMessage(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onCreateContextMenu(
+        menu: ContextMenu?,
+        v: View?,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        menu?.setHeaderTitle("which progress bar")
+        menu?.add("horizontal")
+        menu?.add("circular")
+        menu?.add("circular Big")
+        menu?.add("none")
+
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        when (item.title) {
+
+            "horizontal" -> {
+                showMessage("horizontal")
+                binding.progressHorizontal.visibility = View.VISIBLE
+
+            }
+            "circular" -> {
+                showMessage("circular")
+                binding.progressbar.visibility = View.VISIBLE
+            }
+            "circular Big" -> {
+                showMessage("circular Big")
+                binding.progressCircular.visibility = View.VISIBLE
+            }
+            "none" -> {
+                showMessage("none")
+                binding.progressHorizontal.visibility = View.GONE
+                binding.progressCircular.visibility = View.GONE
+                binding.progressbar.visibility = View.GONE
+            }
+        }
+        return true
     }
 }

@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">learning</string>\
-    <string name="title_activity_main2">intent</string>
+    <string name="title_activity_main2">intent and menu</string>
+    <string name="search">search</string>
+    <string name="profile">profile</string>
+    <string name="setting">setting</string>
 
 </resources>
