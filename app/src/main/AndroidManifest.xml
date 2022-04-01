@@ -4,6 +4,8 @@
     package="com.example.learning_bugeto">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:appComponentFactory="@string/app_name"
@@ -11,18 +13,24 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        tools:replace="android:appComponentFactory"
-        android:theme="@style/Theme.Learning_bugeto">
+        android:theme="@style/Theme.Learning_bugeto"
+        tools:replace="android:appComponentFactory">
         <activity
-            android:name=".WebView"
+            android:name=".SharedActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".ViewPager.ViewPage"
+            android:exported="false" />
+        <activity
+            android:name=".Web.WebView"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivities.MainActivity2"
             android:exported="true"
             android:label="@string/title_activity_main2"
             android:theme="@style/Theme.Learning_bugeto_MainActivity2" />
         <activity
-            android:name=".MainActivity"
+            android:name=".MainActivities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

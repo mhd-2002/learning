@@ -14,13 +14,13 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/bt_float"
-            android:onClick="onClick"
-            android:src="@drawable/ic_do_not_touch_"
             android:layout_width="wrap_content"
-            android:backgroundTint="@color/blue"
-            android:backgroundTintMode="screen"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/blue"
+            android:backgroundTintMode="screen"
+            android:onClick="onClick"
+            android:src="@drawable/ic_do_not_touch_"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
@@ -221,12 +221,64 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:background="@drawable/button_background"
             android:text="Web View"
             android:textStyle="bold"
-
-            android:background="@drawable/button_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bt_custom_dialog" />
+
+        <Button
+            android:id="@+id/bt_runtimePermission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_background"
+            android:padding="5dp"
+            android:text="Permission"
+            app:layout_constraintEnd_toStartOf="@+id/bt_nextActivity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_search" />
+
+        <Button
+            android:id="@+id/bt_shared"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_background"
+            android:padding="5dp"
+            android:text="@string/shared"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/bt_custom_dialog"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bt_viewpager" />
+
+        <Button
+            android:id="@+id/bt_viewpager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_background"
+            android:padding="5dp"
+            android:text="viewPage"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/bt_dialog"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bt_runtimePermission" />
+
+        <Button
+            android:id="@+id/bt_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_background"
+            android:padding="5dp"
+            android:text="@string/notification"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bt_web"
+
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

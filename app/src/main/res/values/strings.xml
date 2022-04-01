@@ -6,6 +6,17 @@
     <string name="setting">setting</string>
     <string name="my_profile">My Profile</string>
     <string name="order">order</string>
-
+    <string name="home">home</string>
+    <string name="explore">explore</string>
+    <string name="notification">Notification</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="this_is_chat_fragment">This is chat fragment</string>
+    <string name="this_is_status_fragment">This is status fragment</string>
+    <string name="this_is_call_fragment">This is call fragment</string>
+    <string name="shared">shared</string>
+    <string name="name">Name:</string>
+    <string name="save">SAVE</string>
+    <string name="show">show</string>
 
 </resources>

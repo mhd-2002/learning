@@ -1,4 +1,4 @@
-package com.example.learning_bugeto
+package com.example.learning_bugeto.Web
 
 import android.annotation.SuppressLint
 import android.graphics.Bitmap

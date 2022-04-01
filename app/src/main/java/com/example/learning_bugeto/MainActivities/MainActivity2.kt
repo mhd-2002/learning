@@ -1,4 +1,4 @@
-package com.example.learning_bugeto
+package com.example.learning_bugeto.MainActivities
 
 import android.content.Intent
 import android.net.Uri
@@ -13,15 +13,14 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import com.example.learning_bugeto.R
 import com.example.learning_bugeto.databinding.ActivityMain2Binding
-import com.google.android.material.navigation.NavigationBarView
-import com.google.android.material.navigation.NavigationView
 
 const val RequestCode1 = 1
 
 class MainActivity2 : AppCompatActivity() {
 
-    lateinit var binding: ActivityMain2Binding
+    private lateinit var binding: ActivityMain2Binding
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var actionBarToggle: ActionBarDrawerToggle
     private lateinit var name: String
@@ -73,6 +72,24 @@ class MainActivity2 : AppCompatActivity() {
 
         }
 
+        binding.btNavigation.setOnItemSelectedListener { menuItem ->
+
+            when (menuItem.itemId) {
+                R.id.action_home -> {
+                    showMessage("home")
+                    finish()
+                    true
+                }
+                R.id.action_explore -> {
+                    showMessage("explore")
+                    true
+                }
+                R.id.action_user -> {
+                    showMessage("user")
+                    true
+                }else ->{false}
+            }
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -180,18 +197,18 @@ class MainActivity2 : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        if (drawerLayout.isDrawerOpen(binding.navigationView)){
+        if (drawerLayout.isDrawerOpen(binding.navigationView)) {
             drawerLayout.closeDrawer(binding.navigationView)
-        }else {
+        } else {
             drawerLayout.openDrawer(binding.navigationView)
         }
         return true
     }
 
     override fun onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
-        }else {
+        } else {
             super.onBackPressed()
         }
     }
