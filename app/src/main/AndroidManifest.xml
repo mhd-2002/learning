@@ -1,29 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.learning_bugeto">
+    package="com.example.learning_bugeto" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+
     <application
+        android:name=".RoomDataBase.BugetoApp"
         android:allowBackup="true"
         android:appComponentFactory="@string/app_name"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        tools:replace="android:appComponentFactory"
-        android:theme="@style/Theme.Learning_bugeto">
+        android:theme="@style/Theme.Learning_bugeto"
+        tools:replace="android:appComponentFactory" >
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAO8xtMqOv_AX7Lsqub8sQfl8oazAxUmdE" />
+
         <activity
-            android:name=".WebView"
+            android:name=".map.creatMap.CreateMapActivity"
+            android:exported="false"
+            android:label="@string/title_activity_creat_map" />
+        <activity
+            android:name=".map.MapsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".map.rvMap.main.MapActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".Retrofit.ShowMovie"
+            android:exported="false" />
+        <activity
+            android:name=".Retrofit.RetrofitGson"
+            android:exported="false" />
+        <activity
+            android:name=".RoomDataBase.RoomDataBase"
+            android:exported="false" />
+        <activity
+            android:name=".Shared.SharedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPager.ViewPage"
+            android:exported="false" />
+        <activity
+            android:name=".Web.WebView"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivities.MainActivity2"
             android:exported="true"
             android:label="@string/title_activity_main2"
             android:theme="@style/Theme.Learning_bugeto_MainActivity2" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".MainActivities.MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
